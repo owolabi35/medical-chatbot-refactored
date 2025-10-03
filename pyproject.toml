@@ -1,9 +1,9 @@
 [project]
-name = "medical-chatbot"
+name = "medical-chatbot-refactored"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.13"
 dependencies = [
     "aiohappyeyeballs==2.6.1 ; python_full_version >= '3.9'",
     "aiohttp==3.12.14 ; python_full_version >= '3.9'",
@@ -40,6 +40,7 @@ dependencies = [
     "jsonschema==4.24.0 ; python_full_version >= '3.9'",
     "jsonschema-specifications==2025.4.1 ; python_full_version >= '3.9'",
     "langchain==0.3.26 ; python_full_version >= '3.9'",
+    "langchain-community>=0.3.27",
     "langchain-community==0.3.27 ; python_full_version >= '3.9'",
     "langchain-core==0.3.68 ; python_full_version >= '3.9'",
     "langchain-groq==0.3.5 ; python_full_version >= '3.9'",

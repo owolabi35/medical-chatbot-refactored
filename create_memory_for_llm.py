@@ -1,7 +1,8 @@
-from langchain_community.document_loaders import PyPDFLoader, DirectoryLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
+from langchain_community.document_loaders import DirectoryLoader, PyPDFLoader
+import os
 
 ## Uncomment the following files if you're not using pipenv as your virtual environment manager
 from dotenv import load_dotenv
@@ -42,5 +43,6 @@ embedding_model=get_embedding_model()
 
 # Step 4: Store embeddings in FAISS
 DB_FAISS_PATH="vectorstore/db_faiss"
+os.makedirs(DB_FAISS_PATH, exist_ok=True)  # <-- Change this line
 db=FAISS.from_documents(text_chunks, embedding_model)
 db.save_local(DB_FAISS_PATH)
